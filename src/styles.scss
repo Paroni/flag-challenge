@@ -43,7 +43,16 @@ body {
   color: white;
 }
 
+.Choices-no-hover {
+  pointer-events: none;
+}
+
 .Choices-selected {
   background-color: red;
+  color: white;
+}
+
+.Choices-correct {
+  background-color: green;
   color: white;
 }

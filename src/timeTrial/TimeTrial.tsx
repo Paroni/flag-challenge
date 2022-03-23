@@ -9,7 +9,7 @@ export default function TimeTrial() {
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [timeElapsed, setTimeElapsed] = useState(0);
   const [answered, setAnswered] = useState(0);
-  const [countriesToGuess] = useState(generateCountries(2));
+  const [countriesToGuess, setCountriesToGuess] = useState(generateCountries(2));
   const [isTrialFailed, setIsTrialFailed] = useState(false);
   const [isTrialStarted, setIsTrialStarted] = useState(false);
   const [isTrialFinished, setIsTrialFinished] = useState(false);
@@ -35,7 +35,13 @@ export default function TimeTrial() {
     )
   } else if (isTrialFailed) {
     return (
-      <TimeTrialLoss />
+      <TimeTrialLoss
+        correctCountry={countriesToGuess[answered]}
+        currentOptions={currentOptions}
+        handleSelection={() => {}}
+        selectedOption={selectedOption}
+        handleReset={handleReset}
+      />
     )
   } else if (isTrialFinished) {
     return (
@@ -46,7 +52,6 @@ export default function TimeTrial() {
       <TimeTrialChallenge
         correctCountry={countriesToGuess[answered]}
         currentOptions={currentOptions}
-        handleAnswer={handleAnswer}
         handleSelection={handleSelection}
         selectedOption={selectedOption}
         timeElapsed={timeElapsed}
@@ -56,23 +61,36 @@ export default function TimeTrial() {
 
   function handleSelection(index: number) {
     setSelectedOption(index);
-  }
+    let isTrialFailed = currentOptions[index] !== countriesToGuess[answered];
+    setIsTrialFailed(isTrialFailed);
 
-  function handleAnswer() {
-    setIsTrialFailed(currentOptions[selectedOption] !== countriesToGuess[answered]);
-
-    let nextAnswered = answered + 1;
-    if (nextAnswered === countriesToGuess.length) {
-      setIsTrialFinished(true);
-      setIsTimerRunning(false);
+    if (!isTrialFailed) {
+      let nextAnswered = answered + 1;
+      if (nextAnswered === countriesToGuess.length) {
+        setIsTrialFinished(true);
+        setIsTimerRunning(false);
+      }
+      setAnswered(nextAnswered);
+      setCurrentOptions(generateCountries(4, countriesToGuess[nextAnswered]))
+      setSelectedOption(4);
     }
-    setAnswered(nextAnswered);
-    setCurrentOptions(generateCountries(4, countriesToGuess[nextAnswered]))
-    setSelectedOption(4);
   }
 
   function handleStart() {
     setIsTrialStarted(true);
     setIsTimerRunning(true);
+  }
+
+  function handleReset() {
+    setIsTrialStarted(false);
+    setIsTimerRunning(false);
+    setIsTimerRunning(false);
+    setTimeElapsed(0);
+    setAnswered(0);
+    setCountriesToGuess(generateCountries(2));
+    setIsTrialFailed(false);
+    setIsTrialFinished(false);
+    setCurrentOptions(generateCountries(4, countriesToGuess[answered]));
+    setSelectedOption(4);
   }
 }

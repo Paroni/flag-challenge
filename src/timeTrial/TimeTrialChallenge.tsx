@@ -1,7 +1,6 @@
 import SectionTitle from "../SectionTitle";
 import Flag from "../Flag";
 import Choices from "../Choices";
-import ConfirmButton from "../ConfirmButton";
 import React from "react";
 import {Country} from "../Countries";
 
@@ -12,7 +11,6 @@ export default function TimeTrialChallenge(
     selectedOption: number
     timeElapsed: number
     handleSelection: (index: number) => void
-    handleAnswer: () => void
   }
 ) {
 
@@ -21,9 +19,9 @@ export default function TimeTrialChallenge(
       <SectionTitle sectionTitle={"Time Trial"}/>
       <Flag country={props.correctCountry}/>
       <Choices options={props.currentOptions} selectedOption={props.selectedOption} correctChoice={props.correctCountry}
-               handleSelection={props.handleSelection}/>
+               handleSelection={props.handleSelection} isLocked={false} isAnswerShown={false}
+      />
       <p>{props.timeElapsed}</p>
-      <ConfirmButton buttonTitle={"Confirm"} handleClick={props.handleAnswer}/>
     </div>
   )
 }

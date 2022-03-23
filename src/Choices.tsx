@@ -7,6 +7,8 @@ function Choices(
     correctChoice: Country
     selectedOption: number;
     handleSelection: (index: number) => void
+    isLocked: boolean
+    isAnswerShown: boolean
   }
 ) {
   const choices: JSX.Element[] = props.options.map((choice, index) => {
@@ -15,7 +17,9 @@ function Choices(
         key={index}
         className={`
             Choices-option
+            ${(props.isLocked) && 'Choices-no-hover'}
             ${(props.selectedOption) === index && 'Choices-selected'}
+            ${(props.isAnswerShown) && (props.options[index] === props.correctChoice)  && 'Choices-correct'}
         `}
         onClick={() => props.handleSelection(index)}
       >
