@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -19,7 +19,16 @@ ReactDOM.render(
           <Route
             path="*"
             element={
-              <p>There's nothing here!</p>
+              <div>
+                <div>
+                  <p>There's nothing here!</p>
+                </div>
+                <div>
+                  <Link to={"/"} >
+                    Front Page
+                  </Link>
+                </div>
+              </div>
             }
           />
         </Route>
