@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import TimeTrial from './timeTrial/TimeTrial';
+import {Outlet} from "react-router-dom";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <h1>Flag Challenge 2021</h1>
       </header>
 
-      <TimeTrial/>
+      <Outlet />
     </div>
   );
 }

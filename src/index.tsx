@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import TimeTrial from "./timeTrial/TimeTrial";
+import Home from "./Home";
+import Author from "./Author";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} >
+          <Route index element={<Home />} />
+          <Route path="challenge" element={<TimeTrial />} />
+          <Route path="author" element={<Author />} />
+          <Route
+            path="*"
+            element={
+              <p>There's nothing here!</p>
+            }
+          />
+        </Route>
+      </Routes>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
