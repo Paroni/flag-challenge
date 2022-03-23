@@ -1,0 +1,49 @@
+$font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$text-color: #000000;
+
+%font-basic {
+  font-family: $font-stack;
+  font-size: 1rem;
+}
+
+body {
+  @extend %font-basic;
+  color: $text-color;
+  margin: 0;
+  background-color: cornflowerblue;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Choices-option {
+  background-color: lightblue;
+  border-radius: 8px;
+  border-color: darkslateblue;
+  border-style: solid;
+  border-width: 8px;
+}
+
+.Choices-option:hover {
+  background-color: blue;
+  color: white;
+}
+
+.Choices-selected {
+  background-color: red;
+  color: white;
+}
