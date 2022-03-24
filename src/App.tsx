@@ -9,7 +9,9 @@ function App() {
         <h1>Flag Challenge 2021</h1>
       </header>
 
-      <Outlet />
+      <div className={"App-body"}>
+        <Outlet />
+      </div>
     </div>
   );
 }
