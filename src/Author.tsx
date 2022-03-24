@@ -6,7 +6,16 @@ function Author() {
     <div className="Author">
       <div>
         <p>
-          Hi! I'm Sami Kalmi, the author of this project.
+          This project was made by Sami Kalmi
+        </p>
+        <p>
+          githublink here!
+        </p>
+        <p>
+          LinkedIn link here!
+        </p>
+        <p>
+          mail address here!
         </p>
       </div>
       <div>

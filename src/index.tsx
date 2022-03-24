@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import TimeTrial from "./timeTrial/TimeTrial";
 import Home from "./Home";
 import Author from "./Author";
+import Leaderboards from "./Leaderboards";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path="/" element={<App />} >
           <Route index element={<Home />} />
           <Route path="challenge" element={<TimeTrial />} />
+          <Route path="leaderboards" element={<Leaderboards />} />
           <Route path="author" element={<Author />} />
           <Route
             path="*"
