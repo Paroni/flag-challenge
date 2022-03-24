@@ -23,13 +23,13 @@ function Choices(
         `}
         onClick={() => props.handleSelection(index)}
       >
-        <p>{choice}</p>
+        {choice}
       </div>
     )
   });
 
   return (
-    <div>
+    <div className={"Choices-container"}>
       {choices}
     </div>
   )

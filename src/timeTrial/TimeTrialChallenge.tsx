@@ -1,4 +1,3 @@
-import SectionTitle from "../SectionTitle";
 import Flag from "../Flag";
 import Choices from "../Choices";
 import React from "react";
@@ -15,9 +14,11 @@ export default function TimeTrialChallenge(
 ) {
 
   return (
-    <div>
-      <SectionTitle sectionTitle={"Time Trial"}/>
-      <Flag country={props.correctCountry}/>
+    <div className={"TimeTrialChallenge-container"}>
+      <div className={"TimeTrialChallenge-flag-container"}>
+        <Flag country={props.correctCountry}/>
+      </div>
+
       <Choices options={props.currentOptions} selectedOption={props.selectedOption} correctChoice={props.correctCountry}
                handleSelection={props.handleSelection} isLocked={false} isAnswerShown={false}
       />

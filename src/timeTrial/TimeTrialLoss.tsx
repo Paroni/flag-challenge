@@ -1,6 +1,5 @@
 import React from 'react';
 import {Country} from "../Countries";
-import SectionTitle from "../SectionTitle";
 import Flag from "../Flag";
 import Choices from "../Choices";
 import NavigationButton from "../NavigationButton";
@@ -15,9 +14,10 @@ function TimeTrialLoss(
   }
 ) {
   return (
-    <div>
-      <SectionTitle sectionTitle={"Time Trial"}/>
-      <Flag country={props.correctCountry}/>
+    <div className={"TimeTrialChallenge-container"}>
+      <div className={"TimeTrialChallenge-flag-container"}>
+        <Flag country={props.correctCountry}/>
+      </div>
       <Choices options={props.currentOptions} selectedOption={props.selectedOption} correctChoice={props.correctCountry}
                handleSelection={props.handleSelection} isLocked={true} isAnswerShown={true}
       />
