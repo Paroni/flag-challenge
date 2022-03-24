@@ -1,29 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import NavigationButton from "./NavigationButton";
 
 function Home() {
   return (
     <div className="Home">
-      <div>
-        <Link to={"/challenge"} >
-          Play Flag Challenge!
-        </Link>
-      </div>
-      <div>
-        <Link to={"/leaderboards"} >
-          Leaderboards
-        </Link>
-      </div>
-      <div>
-        <Link to={"/about"} >
-          About
-        </Link>
-      </div>
-      <div>
-        <Link to={"/author"} >
-          Author
-        </Link>
-      </div>
+      <NavigationButton target={"/challenge"} text={"Play Flag Challenge!"} />
+      <NavigationButton target={"/leaderboards"} text={"Leaderboards"} />
+      <NavigationButton target={"/about"} text={"About"} />
+      <NavigationButton target={"/author"} text={"Author"} />
     </div>
   );
 }

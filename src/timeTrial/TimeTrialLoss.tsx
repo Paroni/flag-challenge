@@ -3,7 +3,6 @@ import {Country} from "../Countries";
 import SectionTitle from "../SectionTitle";
 import Flag from "../Flag";
 import Choices from "../Choices";
-import {Link} from "react-router-dom";
 import NavigationButton from "../NavigationButton";
 
 function TimeTrialLoss(
