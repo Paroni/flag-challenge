@@ -8,6 +8,20 @@ $button-color: #000000;
 $app-body-border: darkorchid solid 0.5rem;
 $app-body-border-radius: 1rem;
 
+%flex-column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+%flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (min-width: $breakpoint-big) {
   %font-basic {
     font-family: $font-stack;
@@ -75,12 +89,9 @@ $header-height: 10vh;
 $body-vertical-margin: 2rem;
 
 .App-header {
+  @extend %flex-column-center;
   background-color: #282c34;
   height: $header-height;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(0.625rem + 2vmin);
   color: white;
 }
@@ -104,17 +115,11 @@ $body-vertical-margin: 2rem;
 }
 
 .Home-information {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-column-center;
 }
 
 .Home-navigation-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  @extend %flex-column-center;
 }
 
 .NavigationButton {
@@ -142,6 +147,10 @@ $body-vertical-margin: 2rem;
   background-color: dodgerblue;
 }
 
+.NavigationButton p {
+  margin: 0;
+}
+
 .Choices-option {
   background-color: cornflowerblue;
   border-radius: 0.5rem;
@@ -167,4 +176,18 @@ $body-vertical-margin: 2rem;
 .Choices-correct {
   background-color: green;
   color: white;
+}
+
+.TimeTrialStart {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.TimeTrialStart-navigation-container {
+  @extend %flex-column-center;
+}
+
+.TimeTrialStart-information {
+  @extend %flex-column-center;
 }

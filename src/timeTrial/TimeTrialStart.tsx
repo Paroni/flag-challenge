@@ -7,14 +7,18 @@ function TimeTrialStart(
   }
 ) {
   return (
-    <div>
-      <div>
-        <button onClick={() => props.handleStart()}>
-          <p>Start!</p>
-        </button>
+    <div className={"TimeTrialStart"}>
+      <div className={"TimeTrialStart-information"}>
+        In Flag Challenge, your goal is to identify flags as quickly as possible. Be careful, because even a single wrong answer means you lose the challenge! Can you learn the flags well enough to get to the top of the leaderboards?
       </div>
 
-      <NavigationButton target={"/"} text={"Back"}/>
+      <div className={"TimeTrialStart-navigation-container"}>
+        <div onClick={() => props.handleStart()} className={"NavigationButton"}>
+          <p className={"NavigationButton-link"}>Start!</p>
+        </div>
+
+        <NavigationButton target={"/"} text={"Back"}/>
+      </div>
     </div>
   )
 }
