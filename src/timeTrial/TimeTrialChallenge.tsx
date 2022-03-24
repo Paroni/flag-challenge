@@ -13,6 +13,12 @@ export default function TimeTrialChallenge(
   }
 ) {
 
+  function millisToMinutesAndSeconds(millis: number) {
+    let minutes = Math.floor(millis / 60000);
+    let seconds = ((millis % 60000) / 1000);
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds.toFixed(2);
+  }
+
   return (
     <div className={"TimeTrialChallenge-container"}>
       <div className={"TimeTrialChallenge-flag-container"}>
@@ -22,7 +28,9 @@ export default function TimeTrialChallenge(
       <Choices options={props.currentOptions} selectedOption={props.selectedOption} correctChoice={props.correctCountry}
                handleSelection={props.handleSelection} isLocked={false} isAnswerShown={false}
       />
-      <p>{props.timeElapsed}</p>
+      <div className={"TimeTrialChallenge-timer"}>
+        {millisToMinutesAndSeconds(props.timeElapsed)}
+      </div>
     </div>
   )
 }

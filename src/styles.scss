@@ -30,6 +30,11 @@ $app-body-border-radius: 1rem;
     font-size: 2rem;
   }
 
+  %font-highlight {
+    font-family: $font-stack;
+    font-size: 3rem;
+  }
+
   %app-body {
     width: $app-body-width;
     border: $app-body-border;
@@ -53,6 +58,11 @@ $app-body-border-radius: 1rem;
     font-size: 1.5rem;
   }
 
+  %font-highlight {
+    font-family: $font-stack;
+    font-size: 2.25rem;
+  }
+
   %app-body {
     width: $app-body-width;
     border: $app-body-border;
@@ -74,6 +84,11 @@ $app-body-border-radius: 1rem;
   %font-basic {
     font-family: $font-stack;
     font-size: 1rem;
+  }
+
+  %font-highlight {
+    font-family: $font-stack;
+    font-size: 1.75rem;
   }
 
   %app-body {
@@ -215,6 +230,11 @@ $body-vertical-margin: 2rem;
 
 .TimeTrialChallenge-flag {
   height: 100%;
+}
+
+.TimeTrialChallenge-timer {
+  @extend %font-highlight;
+  margin: 1rem 0;
 }
 
 .TimeTrialStart {
