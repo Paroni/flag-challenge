@@ -10,6 +10,11 @@ function Home() {
         </Link>
       </div>
       <div>
+        <Link to={"/leaderboards"} >
+          Leaderboards
+        </Link>
+      </div>
+      <div>
         <Link to={"/author"} >
           Author
         </Link>

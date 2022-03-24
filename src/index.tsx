@@ -7,6 +7,7 @@ import TimeTrial from "./timeTrial/TimeTrial";
 import Home from "./Home";
 import Author from "./Author";
 import Leaderboards from "./Leaderboards";
+import PageNotFound from "./PageNotFound";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,21 +18,7 @@ ReactDOM.render(
           <Route path="challenge" element={<TimeTrial />} />
           <Route path="leaderboards" element={<Leaderboards />} />
           <Route path="author" element={<Author />} />
-          <Route
-            path="*"
-            element={
-              <div>
-                <div>
-                  <p>There's nothing here!</p>
-                </div>
-                <div>
-                  <Link to={"/"} >
-                    Front Page
-                  </Link>
-                </div>
-              </div>
-            }
-          />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </Router>
