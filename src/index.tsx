@@ -8,6 +8,7 @@ import Home from "./Home";
 import Author from "./Author";
 import Leaderboards from "./Leaderboards";
 import PageNotFound from "./PageNotFound";
+import About from "./About";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.render(
           <Route index element={<Home />} />
           <Route path="challenge" element={<TimeTrial />} />
           <Route path="leaderboards" element={<Leaderboards />} />
+          <Route path="about" element={<About />} />
           <Route path="author" element={<Author />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
