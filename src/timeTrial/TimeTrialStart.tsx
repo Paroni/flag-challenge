@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import NavigationButton from "../NavigationButton";
 
 function TimeTrialStart(
   props: {
@@ -14,11 +14,7 @@ function TimeTrialStart(
         </button>
       </div>
 
-      <div>
-        <Link to={"/"} >
-          Back
-        </Link>
-      </div>
+      <NavigationButton target={"/"} text={"Back"}/>
     </div>
   )
 }

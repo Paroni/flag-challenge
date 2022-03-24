@@ -4,6 +4,7 @@ import SectionTitle from "../SectionTitle";
 import Flag from "../Flag";
 import Choices from "../Choices";
 import {Link} from "react-router-dom";
+import NavigationButton from "../NavigationButton";
 
 function TimeTrialLoss(
   props: {
@@ -23,10 +24,8 @@ function TimeTrialLoss(
       />
       <div>
         <h2>You lost!</h2>
-        <div>
-          <Link to={"/challenge"} onClick={() => props.handleReset()} >
-            Start Over
-          </Link>
+        <div onClick={() => props.handleReset()}>
+          <NavigationButton target={"/challenge"} text={"Start Over"}/>
         </div>
       </div>
     </div>

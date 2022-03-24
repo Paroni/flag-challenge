@@ -1,5 +1,6 @@
 $font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 $text-color: #000000;
+$button-color: #000000;
 
 %font-basic {
   font-family: $font-stack;
@@ -10,7 +11,7 @@ body {
   @extend %font-basic;
   color: $text-color;
   margin: 0;
-  background-color: cornflowerblue;
+  background-color: lightblue;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -39,6 +40,10 @@ body {
     box-sizing: border-box;
     height: calc(100% - #{$header-height} - #{$body-vertical-margin}*2);
     width: 65rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     border: darkorchid solid 0.5rem;
     border-radius: 1rem;
     margin: $body-vertical-margin auto;
@@ -46,8 +51,32 @@ body {
   }
 }
 
+.NavigationButton {
+  width: 16rem;
+  border: blue solid 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.NavigationButton-link {
+  text-decoration: none;
+  color: $button-color;
+  background-color: deepskyblue;
+  display: block;
+  padding: 1rem 2rem;
+}
+
+.NavigationButton-link:hover {
+  color: $button-color;
+  background-color: aqua;
+}
+
+.NavigationButton-link:active {
+  color: $button-color;
+  background-color: dodgerblue;
+}
+
 .Choices-option {
-  background-color: lightblue;
+  background-color: cornflowerblue;
   border-radius: 0.5rem;
   border-color: darkslateblue;
   border-style: solid;

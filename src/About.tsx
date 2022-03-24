@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import NavigationButton from "./NavigationButton";
 
 function About() {
   return (
@@ -9,11 +9,7 @@ function About() {
           Flag Challenge is based on ...
         </p>
       </div>
-      <div>
-        <Link to={"/"} >
-          Back
-        </Link>
-      </div>
+      <NavigationButton target={"/"} text={"Back"}/>
     </div>
   );
 }
