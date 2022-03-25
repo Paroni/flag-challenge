@@ -33,6 +33,8 @@ export default function TimeTrial() {
   // selectedOption value 4 means that nothing is selected
   const [selectedOption, setSelectedOption] = useState(4);
 
+  //TODO: Fix generateCountries() sometimes not including the correct answer (perhaps related to resetting?)
+
   useEffect(() => {
     let interval: NodeJS.Timeout | null = null;
     if (isTimerRunning) {

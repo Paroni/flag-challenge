@@ -257,7 +257,7 @@ $body-vertical-margin: 2rem;
 .TimeTrialVictory {
   height: 100%;
   display: grid;
-  grid-template-rows: 1fr 1fr 3fr 2fr;
+  grid-template-rows: 1fr 1fr 1fr 3fr 2fr;
 }
 
 .TimeTrialVictory-information {
@@ -265,7 +265,19 @@ $body-vertical-margin: 2rem;
 }
 
 .TimeTrialVictory-information p {
+  margin: 0 0;
+}
+
+.TimeTrialVictory-input-container {
+  @extend %flex-column-center;
+}
+
+.TimeTrialVictory-label {
   margin: 0.5rem 0;
+}
+
+.TimeTrialVictory-input {
+  @extend %font-basic;
 }
 
 .TimeTrialVictory-navigation-container {
