@@ -5,6 +5,22 @@ import TimeTrialLoss from "./TimeTrialLoss";
 import TimeTrialStart from "./TimeTrialStart";
 import TimeTrialChallenge from "./TimeTrialChallenge";
 
+import {collection, addDoc} from "firebase/firestore";
+import {db} from "../index";
+
+async function addScore(score: number, nickname: string) {
+  try {
+    const docRef = await addDoc(collection(db, "highScores"), {
+      score: score,
+      nickname: nickname
+    });
+
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+}
+
 export default function TimeTrial() {
   const [isTimerRunning, setIsTimerRunning] = useState(false);
   const [timeElapsed, setTimeElapsed] = useState(0);
@@ -80,8 +96,9 @@ export default function TimeTrial() {
     }
   }
 
-  function handleScoreUpload() {
-
+  function handleScoreUpload(score: number, nickname: string) {
+    addScore(score, nickname).then();
+    // TODO: Add automatic navigation to leaderboards
   }
 
   function handleStart() {

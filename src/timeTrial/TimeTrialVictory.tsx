@@ -5,7 +5,7 @@ import NavigationButton from "../NavigationButton";
 function TimeTrialVictory(
   props: {
     totalTime: number
-    handleScoreUpload: () => void
+    handleScoreUpload: (score: number, nickname: string) => void
     handleReset: () => void
   }
 ) {
@@ -20,7 +20,7 @@ function TimeTrialVictory(
       </div>
 
       <div className={"TimeTrialVictory-navigation-container"}>
-        <div onClick={() => props.handleScoreUpload()} >
+        <div onClick={() => props.handleScoreUpload(props.totalTime, "TEST NICKNAME")}>
           <NavigationButton target={"/leaderboards"} text={"Upload Score"}/>
         </div>
 

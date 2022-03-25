@@ -10,6 +10,22 @@ import Leaderboards from "./Leaderboards";
 import PageNotFound from "./PageNotFound";
 import About from "./About";
 
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyB-2TPICTORJDqzeqBkigM3hgbTsX7dAu8",
+  authDomain: "flag-challenge-2021.firebaseapp.com",
+  projectId: "flag-challenge-2021",
+  storageBucket: "flag-challenge-2021.appspot.com",
+  messagingSenderId: "816437441924",
+  appId: "1:816437441924:web:780bc1ee88551bd10199d1"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+export const db = getFirestore(firebaseApp);
+
 ReactDOM.render(
   <React.StrictMode>
     <Router>
