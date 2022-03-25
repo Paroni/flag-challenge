@@ -3,7 +3,7 @@ import {QueryDocumentSnapshot, DocumentData, SnapshotOptions} from "firebase/fir
 export function millisToMinutesAndSeconds(millis: number) {
   let minutes = Math.floor(millis / 60000);
   let seconds = ((millis % 60000) / 1000);
-  return minutes + ":" + (seconds < 10 ? '0' : '') + seconds.toFixed(2);
+  return (minutes < 10 ? '0' : '') + minutes + ":" + (seconds < 10 ? '0' : '') + seconds.toFixed(2);
 }
 
 export class HighScore {

@@ -3,15 +3,19 @@ import NavigationButton from "./NavigationButton";
 
 import { collection, getDocs } from "firebase/firestore";
 import {db} from "./index";
-import {HighScore, highScoreConverter} from "./Util";
+import {HighScore, highScoreConverter, millisToMinutesAndSeconds} from "./Util";
 
 function Leaderboards() {
   const [highScores, setHighScores] = useState<HighScore[]>([]);
 
   useEffect(() => {
     getDocs(collection(db, "highScores").withConverter(highScoreConverter)).then(data => {
-      const highScoresList = data.docs.map(doc => doc.data());
-
+      const highScoresList = data.docs.map(doc => doc.data())
+        .filter(highScore => !!highScore.score && typeof highScore.nickname === "string")
+        .sort(
+        (a, b) => {
+          return a.score && b.score ? a.score - b.score : -1
+        })
       setHighScores(highScoresList);
     });
   })
@@ -25,7 +29,7 @@ function Leaderboards() {
       {highScores.map(highScore => {
         return (
           <tr>
-            <td>{highScore?.score}</td>
+            <td>{millisToMinutesAndSeconds(!!highScore?.score ? highScore.score : 0)}</td>
             <td>{highScore?.nickname}</td>
           </tr>
         )
