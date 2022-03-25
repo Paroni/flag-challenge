@@ -24,7 +24,7 @@ function TimeTrialLoss(
       <div>
         <h2>You lost!</h2>
         <div onClick={() => props.handleReset()}>
-          <NavigationButton target={"/challenge"} text={"Start Over"}/>
+          <NavigationButton target={"/challenge"} text={"Try Again"}/>
         </div>
       </div>
     </div>

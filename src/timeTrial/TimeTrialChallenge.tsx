@@ -2,6 +2,7 @@ import Flag from "../Flag";
 import Choices from "../Choices";
 import React from "react";
 import {Country} from "../Countries";
+import {millisToMinutesAndSeconds} from "../Util";
 
 export default function TimeTrialChallenge(
   props: {
@@ -12,12 +13,6 @@ export default function TimeTrialChallenge(
     handleSelection: (index: number) => void
   }
 ) {
-
-  function millisToMinutesAndSeconds(millis: number) {
-    let minutes = Math.floor(millis / 60000);
-    let seconds = ((millis % 60000) / 1000);
-    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds.toFixed(2);
-  }
 
   return (
     <div className={"TimeTrialChallenge-container"}>

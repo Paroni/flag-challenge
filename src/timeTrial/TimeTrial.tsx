@@ -45,7 +45,11 @@ export default function TimeTrial() {
     )
   } else if (isTrialFinished) {
     return (
-      <TimeTrialVictory totalTime={timeElapsed}/>
+      <TimeTrialVictory
+        totalTime={timeElapsed}
+        handleScoreUpload={handleScoreUpload}
+        handleReset={handleReset}
+      />
     )
   } else {
     return (
@@ -74,6 +78,10 @@ export default function TimeTrial() {
       setCurrentOptions(generateCountries(4, countriesToGuess[nextAnswered]))
       setSelectedOption(4);
     }
+  }
+
+  function handleScoreUpload() {
+
   }
 
   function handleStart() {
